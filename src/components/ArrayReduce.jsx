@@ -1,36 +1,23 @@
+import products from "./products";
+
 const ArrayReduce = () => {
 
-    const movies = [
-        {
-            title: 'Parasite',
-            runTime: 132,
-        },
-        {
-            title: 'Metropolis',
-            runTime: 153,
-        },
-        {
-            title: 'Das Boot',
-            runTime: 150,
-        },
-    ];
-
-    const totalRuntime = movies.reduce((accumulator, movie) => {
-        return accumulator + movie.runTime;
+    const totalCost = products.reduce((accumulator, products) => {
+        return accumulator + products.price;
     }, 0);
 
-    const movieNames = movies.reduce((accumulator, movie, i, movies) => {
+    const productNames = products.reduce((accumulator, items, i, products) => {
         return `
             ${accumulator}
             ${i === 0 ? '' : ', '}
-            ${i === movies.length - 1 ? 'and ' : ''}
-            ${movie.title}`;
+            ${i === products.length - 1 ? 'and ' : ''}
+            ${items.name}`;
     }, '');
 
 
     return  <div>
-                <p className="text-center">Movie total length is {totalRuntime} minutes.</p>
-                <p className="text-center">The movies, by the way are {movieNames}</p>
+                <p className="text-center">The total costs of the products is ${totalCost} dollars.</p>
+                <p className="text-center">The products are {productNames}</p>
             </div>
 }
 

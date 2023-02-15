@@ -1,28 +1,13 @@
+import products from "./products"
+
 const ArrayFilter = () => {
 
-    const items = [
+    return <div>
+        <p> These products are on sale!!!</p>
         {
-            id: 1,
-            name: 'Item 1',
-        },
-        {
-            id: 2,
-            name: 'Item 2',
-        },
-        {
-            id: 3,
-            name: 'Item 3',
-        },
-    ];
-
-  
-
-
-    return <ol>
-        {
-            items.filter(( {id} ) => id !== 3).map(({id, name}) => <li key={id}>{name}</li>)
+            products.filter( item => item.onSale != false).map(({id, name, price}) => <li key={id}>The {name} costs ${price}</li>) 
         }
-    </ol>
+    </div>
 }
 
 export default ArrayFilter;
