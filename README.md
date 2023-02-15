@@ -1,5 +1,6 @@
 # task 3
 
+https://csc436.matgargano.com/task-3/
 
 Scenario: You are working on an e-commerce website where users can purchase products. The website stores the products in an array of objects.
 
